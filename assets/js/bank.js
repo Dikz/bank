@@ -28,7 +28,7 @@ function sacar(){
 	var valSaque = prompt("Digite o valor que quer sacar: ");
 
 	//Verifica se nenhum valor foi passado
-	if(valSaque == null){
+	if(valSaque == null || valSaque == "" || valSaque == 0){
 		document.getElementById('textresult').innerHTML = "<i class='fas fa-keyboard'> <i/>Você não digitou nenhum valor!";
 		document.getElementById("actionresult").className = "alert col-md-8 offset-md-2 col-xs-8 col-xs-2 alert-info animated fadeInDown 3s";
 	} else {
@@ -70,7 +70,7 @@ function sacar(){
 function depositar(){
 	var valDeposito = prompt("Digite o valor de deposito: ");
 
-	if(valDeposito == null){
+	if(valDeposito == null || valDeposito == "" || valDeposito == 0){
 		document.getElementById('textresult').innerHTML = "<i class='fas fa-keyboard'> <i/>Você não digitou nenhum valor!";
 		document.getElementById("actionresult").className = "alert col-md-8 offset-md-2 col-xs-8 col-xs-2 alert-info animated fadeInDown 3s";
 	} else {
