@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bank.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <title>Principal</title>
+    <link rel="stylesheet" href="assets\fontawesome\css\fontawesome-all.css">
+  </head>
+  <body onload="">
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">DK</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="container-fluid">
+
+      
+
+      <div class="row principal">
+
+      <div class="alert col-md-8 offset-md-2 col-xs-8 alert-warning animated fadeInDown 3s" role="alert" id="actionresult">
+          <span id="textresult">Tudo Operacional para suas ações! Vá em frente.</span>
+      </div>
+
+
+        <!-- Area inicial usuario -->
+          <button type="button" id="campomoney" class="btn btn-primary btn-lg col-md-2 offset-md-2">
+            <i class="fas fa-money-bill-alt"></i> <span id="username"></span> <span class="badge badge-light" id="dinheiro"></span>
+            <span class="sr-only">unread messages</span>
+          </button>
+          <button class="btn btn-info btn-sm" onclick="mudarNome()">Mudar Nome</button>
+          
+
+      </div>
+      <hr>
+      <div class="row principal">
+
+        <div class="col-md-8 offset-md-2">
+          <button type="button" class="btn btn-primary btn-md" onclick="verSaldo()">Ver Saldo</button>
+          <button type="button" class="btn btn-success btn-md" onclick="depositar()">Depositar</button>
+          <button type="button" id="btnSacar" class="btn btn-danger btn-md" onclick="sacar()">Sacar</button>
+          <button type="button" class="btn btn-warning btn-md" data-toggle="modal" data-target="#relatorioModal" onclick="verRelatorio()">Relatorio</button>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <!-- Modal -->
+      <div class="modal fade" id="relatorioModal" tabindex="-1" role="dialog" aria-labelledby="relatorioModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Relatorio de Ações</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="bodyRelatorio">
+              <!-- Conteudo -->
+              
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <!--<button type="button" class="btn btn-primary">Salvar</button>-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th># <button class="btn btn-info btn-sm" onclick="limparHistorico()">Limpar</button></th>
+                <th scope="col">Operação</th>
+                <th scope="col">Valor</th>
+              </tr>
+            </thead>
+            <tbody id="historico">
+              <!-- Conteudo -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+    
+    <script type="text/javascript" src="assets/js/bank.js"></script>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+  </body>
+</html>
