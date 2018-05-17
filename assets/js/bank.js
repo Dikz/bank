@@ -9,12 +9,23 @@ var campoMoney = document.getElementById('campomoney');
 var dinheiro = document.getElementById('dinheiro');
 var totalSaque=0;
 var totalDeposito=0;
-
+var t;
 //Data
-var hoje = new Date();
-var h = hoje.getHours();
-var m = hoje.getMinutes();
-var s = hoje.getSeconds();
+function verificaTempo(){
+	var hoje = new Date();
+	var h = addZero(hoje.getHours());
+	var min = addZero(hoje.getMinutes());
+	var sec = addZero(hoje.getSeconds());
+	var timeOp = h+":"+min+":"+sec;
+	return timeOp;
+}
+
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
 
 document.addEventListener("DOMContentLoaded", function(event) {
 	document.getElementById('username').innerHTML = localStorage.getItem("nome");
@@ -75,6 +86,7 @@ function sacar(){
 
 function depositar(){
 	var valDeposito = prompt("Digite o valor de deposito: ");
+	var tempo = verificaTempo();
 
 	if(valDeposito == null || valDeposito == "" || valDeposito == 0){
 		document.getElementById('textresult').innerHTML = "<i class='fas fa-keyboard'> <i/>Você não digitou nenhum valor!";
@@ -92,7 +104,8 @@ function depositar(){
 			document.getElementById('actionresult').style.display = "block";
 			document.getElementById("actionresult").className = "alert col-md-8 offset-md-2 alert-success animated fadeInDown 3s";
 			dinheiro.innerHTML = money;
-			document.getElementById('historico').innerHTML += "<tr class='table-success'><td><i class='fas fa-plus-circle' style='color: green;'><i/></td><td>Deposito</td><td>"+valDeposito+"</td></tr>"
+			document.getElementById('historico').innerHTML += "<tr class='table-success'><td><i class='fas fa-plus-circle' style='color: green;'> "+tempo+"<i/></td><td>Deposito</td><td>"+valDeposito+"</td></tr>"
+			verificaTempo();
 
 			totalDeposito = totalDeposito + valDeposito;
 			
