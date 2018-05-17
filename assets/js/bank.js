@@ -10,6 +10,12 @@ var dinheiro = document.getElementById('dinheiro');
 var totalSaque=0;
 var totalDeposito=0;
 
+//Data
+var hoje = new Date();
+var h = hoje.getHours();
+var m = hoje.getMinutes();
+var s = hoje.getSeconds();
+
 document.addEventListener("DOMContentLoaded", function(event) {
 	document.getElementById('username').innerHTML = localStorage.getItem("nome");
 	verSaldo();
