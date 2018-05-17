@@ -43,6 +43,7 @@ function verSaldo(){
 //Function de Saque
 function sacar(){
 	var valSaque = prompt("Digite o valor que quer sacar: ");
+	var tempo = verificaTempo();
 
 	//Verifica se nenhum valor foi passado
 	if(valSaque == null || valSaque == "" || valSaque == 0){
@@ -70,7 +71,7 @@ function sacar(){
 				document.getElementById('actionresult').style.display = "block";
 				document.getElementById("actionresult").className = "alert col-md-8 offset-md-2 alert-danger";
 				dinheiro.innerHTML = money;
-				document.getElementById('historico').innerHTML += "<tr class='table-danger'><td><i class='fas fa-minus-square' style='color: red;'><i/></td><td>Saque</td><td>"+valSaque+"</td></tr>"
+				document.getElementById('historico').innerHTML += "<tr class='table-danger'><td><i class='fas fa-minus-square' style='color: red;'><i/> R$"+valSaque+"</td><td>Saque</td><td>"+tempo+"</td></tr>"
 				totalSaque = totalSaque + valSaque;
 				
 				//Armazenamento do money
