@@ -104,8 +104,7 @@ function depositar(){
 			document.getElementById('actionresult').style.display = "block";
 			document.getElementById("actionresult").className = "alert col-md-8 offset-md-2 alert-success animated fadeInDown 3s";
 			dinheiro.innerHTML = money;
-			document.getElementById('historico').innerHTML += "<tr class='table-success'><td><i class='fas fa-plus-circle' style='color: green;'> "+tempo+"<i/></td><td>Deposito</td><td>"+valDeposito+"</td></tr>"
-			verificaTempo();
+			document.getElementById('historico').innerHTML += "<tr class='table-success'><td><i class='fas fa-plus-circle' style='color: green;'> R$"+valDeposito+"<i/></td><td>Deposito</td><td>"+tempo+"</td></tr>";
 
 			totalDeposito = totalDeposito + valDeposito;
 			
